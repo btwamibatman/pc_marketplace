@@ -46,7 +46,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <button id="themeToggle" class="btn btn-sm btn-light ms-2" title="Toggle theme">🌙</button>
+                        <button id="themeToggle" class="btn btn-sm btn-outline-light ms-2" title="Toggle theme">
+                            <i class="fas fa-adjust me-1"></i>Change Theme
+                        </button>
                     </li>
                     <li class="nav-item cart-icon">
                         <a class="nav-link" href="cart.html">
@@ -89,7 +91,7 @@
                             <small>Support Available</small>
                         </div>
                         <div class="contact-stat">
-                            <h4 class="mb-0">< 5 min</h4>
+                            <h4 class="mb-0">5 min</h4>
                             <small>Average Response</small>
                         </div>
                         <div class="contact-stat">
@@ -117,7 +119,7 @@
                         </div>
                         <h5 class="mb-3">Call Us</h5>
                         <p class="text-muted mb-3">Speak with our technical experts</p>
-                        <strong class="text-primary">+1 (555) 123-4567</strong>
+                        <strong class="text-primary">+7 (777) 000 - 88 - 77</strong>
                         <div class="mt-3">
                             <button class="btn btn-outline-primary btn-sm" onclick="callUs()">
                                 <i class="fas fa-phone me-1"></i>Call Now
@@ -133,7 +135,7 @@
                         </div>
                         <h5 class="mb-3">Live Chat</h5>
                         <p class="text-muted mb-3">Get instant help from our team</p>
-                        <strong class="text-success">Average wait: 30 sec</strong>
+                        <strong class="text-success">Average wait: few minutes</strong>
                         <div class="mt-3">
                             <button class="btn btn-outline-success btn-sm" onclick="startLiveChat()">
                                 <i class="fas fa-comments me-1"></i>Start Chat
@@ -149,7 +151,7 @@
                         </div>
                         <h5 class="mb-3">Email</h5>
                         <p class="text-muted mb-3">Send us a detailed message</p>
-                        <strong class="text-warning">info@Shop PC.com</strong>
+                        <strong class="text-warning">info@ShopPC.com</strong>
                         <div class="mt-3">
                             <button class="btn btn-outline-warning btn-sm" onclick="scrollToContact()">
                                 <i class="fas fa-envelope me-1"></i>Send Email
@@ -165,7 +167,7 @@
                         </div>
                         <h5 class="mb-3">Visit Us</h5>
                         <p class="text-muted mb-3">Come see our showroom</p>
-                        <strong class="text-danger">123 Tech Street, CA</strong>
+                        <strong class="text-danger">Astana IT university</strong>
                         <div class="mt-3">
                             <button class="btn btn-outline-danger btn-sm" onclick="openMap()">
                                 <i class="fas fa-map me-1"></i>Get Directions
@@ -497,7 +499,7 @@
                         <div class="position-absolute top-50 start-50 translate-middle text-center">
                             <i class="fas fa-map-marker-alt fa-4x text-primary mb-3"></i>
                             <h5>Interactive Map</h5>
-                            <p class="text-muted mb-3">123 Tech Street, Silicon Valley, CA 94000</p>
+                            <p class="text-muted mb-3">Astana, Kazakhstan, Astana IT university</p>
                             <button class="btn btn-primary-custom" onclick="openMap()">
                                 <i class="fas fa-external-link-alt me-2"></i>Open in Maps
                             </button>
@@ -513,8 +515,7 @@
                             <div class="mb-3">
                                 <i class="fas fa-map-marker-alt me-2 text-danger"></i>
                                 <strong>Address:</strong><br>
-                                123 Tech Street<br>
-                                Silicon Valley, CA 94000
+                               Astana, Kazakhstan, Astana IT university
                             </div>
                             <div class="mb-3">
                                 <i class="fas fa-parking me-2 text-success"></i>
@@ -524,7 +525,7 @@
                             <div class="mb-3">
                                 <i class="fas fa-bus me-2 text-info"></i>
                                 <strong>Public Transit:</strong><br>
-                                Metro Line 3, Bus Routes 15, 22, 34
+                                Accessible via bus lines 60, 26, 84 
                             </div>
                             <div class="mb-3">
                                 <i class="fas fa-wheelchair me-2 text-secondary"></i>
@@ -592,15 +593,15 @@
                 <div class="col-lg-2 col-md-6">
                     <h6 class="footer-title">Contact Info</h6>
                     <ul class="footer-links">
-                        <li><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</li>
+                        <li><i class="fas fa-phone me-2"></i>+7 (000) 666 - 76 - 67</li>
                         <li><i class="fas fa-envelope me-2"></i>info@Shop PC.com</li>
-                        <li><i class="fas fa-map-marker-alt me-2"></i>123 Tech Street</li>
-                        <li>Silicon Valley, CA 94000</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Astana IT university</li>
+                        <li>Astana IT university</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Shop PC. All rights reserved. | Designed by Abdigalym Khamza | SE-2428</p>
+                <p>&copy; 2025 Shop PC. All rights reserved. | Designed by Abdigalym Khamza | SE-2428</p>
             </div>
         </div>
     </footer>
@@ -776,7 +777,7 @@
 
         // Contact method functions
         function callUs() {
-            window.location.href = 'tel:+15551234567';
+            window.location.href = 'tel:+77770006776';
         }
 
         function startLiveChat() {
@@ -793,12 +794,12 @@
 
         function openMap() {
             // Open map in new tab
-            window.open('https://maps.google.com/?q=123+Tech+Street,+Silicon+Valley,+CA+94000', '_blank');
+            window.open('https://www.google.com.my/maps/place/Astana+IT+University/', '_blank');
         }
 
         function emergencyContact() {
             if (confirm('This will call our emergency support line. Continue?')) {
-                window.location.href = 'tel:+18003637436';
+                window.location.href = 'tel:+77770000000';
             }
         }
 
