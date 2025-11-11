@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     loadCart();
     updateCartCount();
     initializePage();
+    initializeTheme();
+    loadQuote();
 });
 
 // Load cart from localStorage
@@ -425,3 +427,54 @@ function isInViewport(element) {
         rect.right <= window.innerWidth
     );
 }
+
+// ============================================
+// DARK/LIGHT THEME TOGGLE (localStorage)
+// ============================================
+
+function initializeTheme() {
+    const themeToggle = document.getElementById('themeToggle');
+    if (!themeToggle) return;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeToggle.textContent = '☀️';
+    } else {
+        themeToggle.textContent = '🌙';
+    }
+
+    // Toggle theme
+    themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-theme');
+        const isDark = document.body.classList.contains('dark-theme');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        themeToggle.textContent = isDark ? '☀️' : '🌙';
+    });
+}
+
+// ============================================
+// API INTEGRATION - Fetch Random Quote
+// ============================================
+
+async function loadQuote() {
+    const quoteText = document.getElementById('quoteText');
+    if (!quoteText) return;
+
+    try {
+        const response = await fetch('https://api.quotable.io/random');
+        const data = await response.json();
+        quoteText.innerHTML = `"${data.content}" <br><small class="text-muted">— ${data.author}</small>`;
+    } catch (error) {
+        quoteText.textContent = '"Innovation distinguishes between a leader and a follower." — Steve Jobs';
+    }
+}
+
+// Attach new quote button
+document.addEventListener('DOMContentLoaded', function() {
+    const newQuoteBtn = document.getElementById('newQuoteBtn');
+    if (newQuoteBtn) {
+        newQuoteBtn.addEventListener('click', loadQuote);
+    }
+});

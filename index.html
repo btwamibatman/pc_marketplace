@@ -47,6 +47,9 @@
                             <i class="fas fa-envelope me-1"></i>Contact
                         </a>
                     </li>
+                        <li class="nav-item">
+                            <button id="themeToggle" class="btn btn-sm btn-light ms-2" title="Toggle theme">🌙</button>
+                        </li>
                     <li class="nav-item cart-icon">
                         <a class="nav-link" href="cart.html">
                             <i class="fas fa-shopping-cart me-1"></i>Cart
@@ -57,6 +60,8 @@
             </div>
         </div>
     </nav>
+    
+    <main>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -251,6 +256,16 @@
         </div>
     </section>
 
+    <!-- Quote / API Section -->
+    <section class="section">
+        <div class="container">
+            <div id="quoteCard" class="p-4 bg-white rounded shadow-custom text-center">
+                <blockquote id="quoteText" class="mb-3">Loading inspirational quote...</blockquote>
+                <button id="newQuoteBtn" class="btn btn-secondary-custom">New Quote</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Categories Section -->
     <section class="section">
         <div class="container">
@@ -400,6 +415,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
