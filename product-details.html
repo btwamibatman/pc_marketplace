@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTX 4080 Gaming Beast - Shop PC</title>
+    <meta name="description" content="High-performance gaming PC with Intel i7-13700K, RTX 4080, and 32GB DDR5 RAM. Perfect for 4K gaming and streaming.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-desktop me-2"></i>Shop PC
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">
+                            <i class="fas fa-laptop me-1"></i>Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="product-details.html">
+                            <i class="fas fa-info-circle me-1"></i>Featured PC
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item cart-icon">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fas fa-shopping-cart me-1"></i>Cart
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="bg-light py-4" style="margin-top: 76px;">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+                    <li class="breadcrumb-item"><a href="products.html?category=gaming">Gaming PCs</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">RTX 4080 Gaming Beast</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Details Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Product Images -->
+                <div class="col-lg-6">
+                    <div class="product-images">
+                        <!-- Main Product Image -->
+                        <div class="main-image-container mb-3">
+                            <img id="mainImage" src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="RTX 4080 Gaming Beast - Main View" class="main-product-image">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="discount-badge">-15%</span>
+                            </div>
+                            <button class="btn btn-light position-absolute" style="top: 50%; left: 10px; transform: translateY(-50%);" 
+                                    onclick="zoomImage()">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Thumbnail Gallery -->
+                        <div class="image-gallery">
+                            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Front View" class="gallery-thumb active" onclick="changeMainImage(this)">
+                            <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Side View" class="gallery-thumb" onclick="changeMainImage(this)">
+                            <img src="https://images.unsplash.com/photo-1558618666-fbd26c1cd8d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Interior View" class="gallery-thumb" onclick="changeMainImage(this)">
+                            <img src="https://images.unsplash.com/photo-1591799265444-d66432b91588?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Back View" class="gallery-thumb" onclick="changeMainImage(this)">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="RGB Lighting" class="gallery-thumb" onclick="changeMainImage(this)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Information -->
+                <div class="col-lg-6">
+                    <div class="product-info">
+                        <h1 class="product-title mb-3">RTX 4080 Gaming Beast</h1>
+                        
+                        <!-- Rating and Reviews -->
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-warning me-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-muted">(4.9) • 127 reviews</span>
+                        </div>
+
+                        <!-- Price -->
+                        <div class="price-section mb-4">
+                            <div class="d-flex align-items-center">
+                                <span class="product-price fs-2 me-3">$2,549</span>
+                                <span class="old-price fs-5">$2,999</span>
+                                <span class="badge bg-danger ms-3">Save $450</span>
+                            </div>
+                            <p class="text-success mb-0"><i class="fas fa-check-circle me-1"></i>In Stock - Ready to Ship</p>
+                        </div>
+
+                        <!-- Key Features -->
+                        <div class="key-features mb-4">
+                            <h5 class="mb-3">Key Features</h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="feature-item p-3 bg-light rounded">
+                                        <i class="fas fa-microchip text-primary me-2"></i>
+                                        <strong>Intel i7-13700K</strong>
+                                        <br><small class="text-muted">16-Core, 24-Thread Processor</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-item p-3 bg-light rounded">
+                                        <i class="fas fa-tv text-primary me-2"></i>
+                                        <strong>RTX 4080 GPU</strong>
+                                        <br><small class="text-muted">16GB GDDR6X VRAM</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-item p-3 bg-light rounded">
+                                        <i class="fas fa-memory text-primary me-2"></i>
+                                        <strong>32GB DDR5</strong>
+                                        <br><small class="text-muted">5600MHz Dual Channel</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-item p-3 bg-light rounded">
+                                        <i class="fas fa-hdd text-primary me-2"></i>
+                                        <strong>1TB NVMe SSD</strong>
+                                        <br><small class="text-muted">PCIe 4.0 M.2 Storage</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quantity and Actions -->
+                        <div class="quantity-section mb-4">
+                            <div class="row align-items-center g-3">
+                                <div class="col-md-4">
+                                    <label class="form-label">Quantity:</label>
+                                    <div class="quantity-controls">
+                                        <button type="button" class="quantity-btn" onclick="changeQuantity(-1)">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input type="number" class="quantity-input" id="quantity" value="1" min="1" max="10">
+                                        <button type="button" class="quantity-btn" onclick="changeQuantity(1)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-primary-custom flex-fill btn-lg" onclick="addToCart('gaming-beast', 'RTX 4080 Gaming Beast', 2549)">
+                                            <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                                        </button>
+                                        <button class="btn btn-secondary-custom" onclick="toggleWishlist()">
+                                            <i class="far fa-heart" id="wishlistIcon"></i>
+                                        </button>
+                                        <button class="btn btn-secondary-custom" onclick="shareProduct()">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Highlights -->
+                        <div class="highlights mb-4">
+                            <h6 class="mb-3">Product Highlights</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>4K Gaming at 60+ FPS</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Ray Tracing & DLSS 3.0</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Pre-installed Windows 11 Pro</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>RGB Lighting & Tempered Glass</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>3-Year Premium Warranty</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Free 24/7 Tech Support</li>
+                            </ul>
+                        </div>
+
+                        <!-- Delivery Information -->
+                        <div class="delivery-info p-3 bg-light rounded">
+                            <h6 class="mb-3"><i class="fas fa-truck me-2"></i>Delivery Information</h6>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <small class="text-muted">Standard Delivery</small>
+                                    <div><strong>3-5 Business Days</strong></div>
+                                    <div class="text-success">FREE</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <small class="text-muted">Express Delivery</small>
+                                    <div><strong>1-2 Business Days</strong></div>
+                                    <div class="text-primary">$49.99</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Tabs -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Tab Navigation -->
+                    <ul class="nav nav-tabs nav-fill mb-4" id="productTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab">
+                                <i class="fas fa-info-circle me-2"></i>Description
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="specifications-tab" data-bs-toggle="tab" data-bs-target="#specifications" type="button" role="tab">
+                                <i class="fas fa-cog me-2"></i>Specifications
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab">
+                                <i class="fas fa-star me-2"></i>Reviews
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="warranty-tab" data-bs-toggle="tab" data-bs-target="#warranty" type="button" role="tab">
+                                <i class="fas fa-shield-alt me-2"></i>Warranty
+                            </button>
+                        </li>
+                    </ul>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="productTabsContent">
+                        <!-- Description Tab -->
+                        <div class="tab-pane fade show active" id="description" role="tabpanel">
+                            <div class="row g-4">
+                                <div class="col-lg-8">
+                                    <h4 class="mb-3">About the RTX 4080 Gaming Beast</h4>
+                                    <p class="lead">
+                                        Experience gaming like never before with our flagship RTX 4080 Gaming Beast. 
+                                        This powerhouse system is meticulously crafted for enthusiasts who demand 
+                                        nothing but the best in performance, aesthetics, and reliability.
+                                    </p>
+                                    <p>
+                                        Built around the cutting-edge Intel 13th generation i7-13700K processor and 
+                                        NVIDIA's flagship RTX 4080 graphics card, this system delivers unprecedented 
+                                        gaming performance at 4K resolution with ray tracing enabled. Whether you're 
+                                        exploring vast open worlds, competing in esports, or creating content, this PC 
+                                        handles everything with ease.
+                                    </p>
+                                    <h5 class="mt-4 mb-3">What Makes It Special</h5>
+                                    <ul>
+                                        <li><strong>Premium Components:</strong> Only the highest quality components from trusted brands like Intel, NVIDIA, Corsair, and ASUS</li>
+                                        <li><strong>Expert Assembly:</strong> Hand-built by certified technicians with premium cable management and thermal optimization</li>
+                                        <li><strong>Stress Testing:</strong> 48-hour burn-in testing ensures stability and performance before shipping</li>
+                                        <li><strong>Future-Proof Design:</strong> PCIe 5.0 support, DDR5 memory, and upgrade-friendly architecture</li>
+                                        <li><strong>Aesthetic Excellence:</strong> Premium RGB lighting with synchronized effects and tempered glass showcase</li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="bg-gradient text-white p-4 rounded">
+                                        <h5 class="mb-3"><i class="fas fa-award me-2"></i>Performance Benchmarks</h5>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Cyberpunk 2077 (4K, RT)</span>
+                                                <strong>65+ FPS</strong>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Call of Duty (4K)</span>
+                                                <strong>120+ FPS</strong>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <span>3DMark Time Spy</span>
+                                                <strong>18,500+</strong>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Cinebench R23</span>
+                                                <strong>28,000+</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Specifications Tab -->
+                        <div class="tab-pane fade" id="specifications" role="tabpanel">
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <h5 class="mb-3">Core Components</h5>
+                                    <table class="table spec-table">
+                                        <tr>
+                                            <th>Processor</th>
+                                            <td>Intel Core i7-13700K<br><small class="text-muted">16-Core, 24-Thread, up to 5.4GHz</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Graphics Card</th>
+                                            <td>NVIDIA GeForce RTX 4080<br><small class="text-muted">16GB GDDR6X, 2.51GHz Boost</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Memory</th>
+                                            <td>32GB DDR5-5600<br><small class="text-muted">Corsair Vengeance, Dual Channel</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Storage</th>
+                                            <td>1TB NVMe SSD<br><small class="text-muted">Samsung 980 Pro, PCIe 4.0</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Motherboard</th>
+                                            <td>ASUS ROG STRIX Z790-E<br><small class="text-muted">Intel Z790, WiFi 6E, Bluetooth 5.3</small></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h5 class="mb-3">System Details</h5>
+                                    <table class="table spec-table">
+                                        <tr>
+                                            <th>Power Supply</th>
+                                            <td>850W 80+ Gold<br><small class="text-muted">Corsair RM850x, Modular</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Cooling</th>
+                                            <td>240mm AIO Liquid Cooler<br><small class="text-muted">Corsair H100i RGB Elite</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Case</th>
+                                            <td>Mid-Tower Gaming Case<br><small class="text-muted">Tempered Glass, RGB Fans</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Operating System</th>
+                                            <td>Windows 11 Pro<br><small class="text-muted">64-bit, Pre-installed & Activated</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Warranty</th>
+                                            <td>3 Years Premium<br><small class="text-muted">Parts & Labor, Free Tech Support</small></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <h5 class="mb-3">Connectivity & I/O</h5>
+                                    <div class="row g-3">
+                                        <div class="col-md-3">
+                                            <div class="text-center p-3 bg-light rounded">
+                                                <i class="fas fa-usb fa-2x text-primary mb-2"></i>
+                                                <div><strong>8x USB Ports</strong></div>
+                                                <small class="text-muted">USB 3.2 & USB-C</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="text-center p-3 bg-light rounded">
+                                                <i class="fas fa-wifi fa-2x text-primary mb-2"></i>
+                                                <div><strong>WiFi 6E</strong></div>
+                                                <small class="text-muted">Bluetooth 5.3</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="text-center p-3 bg-light rounded">
+                                                <i class="fas fa-tv fa-2x text-primary mb-2"></i>
+                                                <div><strong>4x Display</strong></div>
+                                                <small class="text-muted">HDMI 2.1, DisplayPort</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="text-center p-3 bg-light rounded">
+                                                <i class="fas fa-network-wired fa-2x text-primary mb-2"></i>
+                                                <div><strong>2.5Gb Ethernet</strong></div>
+                                                <small class="text-muted">Intel I225-V</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reviews Tab -->
+                        <div class="tab-pane fade" id="reviews" role="tabpanel">
+                            <div class="row g-4">
+                                <div class="col-lg-4">
+                                    <div class="review-summary p-4 bg-light rounded text-center">
+                                        <h3 class="text-primary mb-2">4.9/5</h3>
+                                        <div class="text-warning mb-3">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="mb-0">Based on 127 reviews</p>
+                                        
+                                        <div class="rating-breakdown mt-4">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <span class="me-2">5★</span>
+                                                <div class="flex-fill bg-white rounded" style="height: 8px;">
+                                                    <div class="bg-warning rounded" style="width: 85%; height: 100%;"></div>
+                                                </div>
+                                                <span class="ms-2 small">108</span>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <span class="me-2">4★</span>
+                                                <div class="flex-fill bg-white rounded" style="height: 8px;">
+                                                    <div class="bg-warning rounded" style="width: 12%; height: 100%;"></div>
+                                                </div>
+                                                <span class="ms-2 small">15</span>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <span class="me-2">3★</span>
+                                                <div class="flex-fill bg-white rounded" style="height: 8px;">
+                                                    <div class="bg-warning rounded" style="width: 3%; height: 100%;"></div>
+                                                </div>
+                                                <span class="ms-2 small">4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-8">
+                                    <div class="reviews-list">
+                                        <!-- Review 1 -->
+                                        <div class="review-item p-4 mb-4 bg-white rounded shadow-sm">
+                                            <div class="d-flex align-items-start">
+                                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" 
+                                                     style="width: 50px; height: 50px; min-width: 50px;">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div class="flex-fill">
+                                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                                        <div>
+                                                            <h6 class="mb-1">Alex Rodriguez</h6>
+                                                            <div class="text-warning small mb-1">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <small class="text-muted">2 weeks ago</small>
+                                                    </div>
+                                                    <p class="mb-2">
+                                                        "Absolutely incredible performance! This PC runs Cyberpunk 2077 at 4K with ray tracing at 
+                                                        65+ FPS consistently. The build quality is outstanding, and the RGB lighting looks amazing. 
+                                                        Worth every penny!"
+                                                    </p>
+                                                    <div class="d-flex gap-3 small text-muted">
+                                                        <span><i class="fas fa-thumbs-up me-1"></i>Helpful (24)</span>
+                                                        <span><i class="fas fa-reply me-1"></i>Reply</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Review 2 -->
+                                        <div class="review-item p-4 mb-4 bg-white rounded shadow-sm">
+                                            <div class="d-flex align-items-start">
+                                                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center me-3" 
+                                                     style="width: 50px; height: 50px; min-width: 50px;">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div class="flex-fill">
+                                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                                        <div>
+                                                            <h6 class="mb-1">Sarah Chen</h6>
+                                                            <div class="text-warning small mb-1">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <small class="text-muted">3 weeks ago</small>
+                                                    </div>
+                                                    <p class="mb-2">
+                                                        "Perfect for content creation! Video editing is butter smooth, and streaming while gaming 
+                                                        shows no performance drops. The customer service was excellent, and delivery was faster than expected."
+                                                    </p>
+                                                    <div class="d-flex gap-3 small text-muted">
+                                                        <span><i class="fas fa-thumbs-up me-1"></i>Helpful (18)</span>
+                                                        <span><i class="fas fa-reply me-1"></i>Reply</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Review 3 -->
+                                        <div class="review-item p-4 mb-4 bg-white rounded shadow-sm">
+                                            <div class="d-flex align-items-start">
+                                                <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center me-3" 
+                                                     style="width: 50px; height: 50px; min-width: 50px;">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div class="flex-fill">
+                                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                                        <div>
+                                                            <h6 class="mb-1">Mike Johnson</h6>
+                                                            <div class="text-warning small mb-1">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <small class="text-muted">1 month ago</small>
+                                                    </div>
+                                                    <p class="mb-2">
+                                                        "Amazing build quality and cable management. Everything was perfectly organized inside the case. 
+                                                        The RGB synchronization is flawless, and the temps stay low even under heavy load."
+                                                    </p>
+                                                    <div class="d-flex gap-3 small text-muted">
+                                                        <span><i class="fas fa-thumbs-up me-1"></i>Helpful (31)</span>
+                                                        <span><i class="fas fa-reply me-1"></i>Reply</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button class="btn btn-primary-custom" onclick="loadMoreReviews()">
+                                            <i class="fas fa-plus me-2"></i>Load More Reviews
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Warranty Tab -->
+                        <div class="tab-pane fade" id="warranty" role="tabpanel">
+                            <div class="row g-4">
+                                <div class="col-lg-8">
+                                    <h4 class="mb-4">3-Year Premium Warranty</h4>
+                                    
+                                    <div class="accordion" id="warrantyAccordion">
+                                        <div class="accordion-item mb-3">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#warranty1">
+                                                    <i class="fas fa-shield-alt me-3"></i>What's Covered
+                                                </button>
+                                            </h2>
+                                            <div id="warranty1" class="accordion-collapse collapse show" data-bs-parent="#warrantyAccordion">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>All hardware components and labor</li>
+                                                        <li>Manufacturing defects and component failures</li>
+                                                        <li>Free replacement parts and service</li>
+                                                        <li>Remote diagnostics and troubleshooting</li>
+                                                        <li>Software support and OS reinstallation</li>
+                                                        <li>24/7 technical support hotline</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item mb-3">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#warranty2">
+                                                    <i class="fas fa-tools me-3"></i>Service Options
+                                                </button>
+                                            </h2>
+                                            <div id="warranty2" class="accordion-collapse collapse" data-bs-parent="#warrantyAccordion">
+                                                <div class="accordion-body">
+                                                    <div class="row g-3">
+                                                        <div class="col-md-6">
+                                                            <h6><i class="fas fa-home me-2"></i>On-Site Service</h6>
+                                                            <p>Technician visits your location for repairs and maintenance.</p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <h6><i class="fas fa-shipping-fast me-2"></i>Express RMA</h6>
+                                                            <p>Fast replacement program with advance exchange options.</p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <h6><i class="fas fa-video me-2"></i>Remote Support</h6>
+                                                            <p>Screen sharing support for software issues and optimization.</p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <h6><i class="fas fa-store me-2"></i>Service Centers</h6>
+                                                            <p>Drop-off service at authorized repair centers nationwide.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item mb-3">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#warranty3">
+                                                    <i class="fas fa-clock me-3"></i>Response Times
+                                                </button>
+                                            </h2>
+                                            <div id="warranty3" class="accordion-collapse collapse" data-bs-parent="#warrantyAccordion">
+                                                <div class="accordion-body">
+                                                    <div class="row g-3">
+                                                        <div class="col-md-4">
+                                                            <div class="text-center p-3 bg-light rounded">
+                                                                <i class="fas fa-phone fa-2x text-success mb-2"></i>
+                                                                <h6>Phone Support</h6>
+                                                                <p class="mb-0">Within 5 minutes<br><small class="text-muted">24/7 availability</small></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="text-center p-3 bg-light rounded">
+                                                                <i class="fas fa-wrench fa-2x text-warning mb-2"></i>
+                                                                <h6>On-Site Service</h6>
+                                                                <p class="mb-0">Next business day<br><small class="text-muted">In most areas</small></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="text-center p-3 bg-light rounded">
+                                                                <i class="fas fa-exchange-alt fa-2x text-primary mb-2"></i>
+                                                                <h6>Replacement</h6>
+                                                                <p class="mb-0">2-3 business days<br><small class="text-muted">Express shipping</small></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-4">
+                                    <div class="warranty-contact p-4 bg-gradient text-white rounded">
+                                        <h5 class="mb-3"><i class="fas fa-headset me-2"></i>Need Support?</h5>
+                                        <p>Our expert technicians are ready to help you 24/7.</p>
+                                        
+                                        <div class="contact-methods">
+                                            <div class="mb-3">
+                                                <i class="fas fa-phone me-2"></i>
+                                                <strong>1-800-TECH-HUB</strong>
+                                                <br><small>24/7 Phone Support</small>
+                                            </div>
+                                            <div class="mb-3">
+                                                <i class="fas fa-comments me-2"></i>
+                                                <strong>Live Chat</strong>
+                                                <br><small>Average wait time: 30 seconds</small>
+                                            </div>
+                                            <div class="mb-3">
+                                                <i class="fas fa-envelope me-2"></i>
+                                                <strong>support@Shop PC.com</strong>
+                                                <br><small>Email support available</small>
+                                            </div>
+                                        </div>
+
+                                        <button class="btn btn-light w-100 mt-3">
+                                            <i class="fas fa-headset me-2"></i>Start Live Chat
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="section">
+        <div class="container">
+            <h3 class="section-title">Related Products</h3>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1558618666-fbd26c1cd8d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                             alt="AMD Gaming Pro" class="product-image w-100">
+                        <div class="card-body">
+                            <h6 class="product-title">AMD Gaming Pro</h6>
+                            <div class="product-price mb-3">$1,899</div>
+                            <button class="btn btn-primary-custom w-100">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                             alt="Budget Gaming Starter" class="product-image w-100">
+                        <div class="card-body">
+                            <h6 class="product-title">Budget Gaming Starter</h6>
+                            <div class="product-price mb-3">$899</div>
+                            <button class="btn btn-primary-custom w-100">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                             alt="Ultimate Gaming Rig" class="product-image w-100">
+                        <div class="card-body">
+                            <h6 class="product-title">Ultimate Gaming Rig</h6>
+                            <div class="product-price mb-3">$3,199</div>
+                            <button class="btn btn-primary-custom w-100">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1591799265444-d66432b91588?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                             alt="Pro Workstation Elite" class="product-image w-100">
+                        <div class="card-body">
+                            <h6 class="product-title">Pro Workstation Elite</h6>
+                            <div class="product-price mb-3">$3,299</div>
+                            <button class="btn btn-primary-custom w-100">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="footer-title">
+                        <i class="fas fa-desktop me-2"></i>Shop PC
+                    </h5>
+                    <p class="text-light">
+                        Your trusted partner for premium gaming PCs, professional workstations, 
+                        and custom computer builds. Quality, performance, and service you can depend on.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="product-details.html">Featured PC</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Categories</h6>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=gaming">Gaming PCs</a></li>
+                        <li><a href="products.html?category=workstation">Workstations</a></li>
+                        <li><a href="products.html?category=office">Office PCs</a></li>
+                        <li><a href="contact.html">Custom Builds</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Support</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Contact Info</h6>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@Shop PC.com</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>123 Tech Street</li>
+                        <li>Silicon Valley, CA 94000</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shop PC. All rights reserved. | Designed by Abdigalym Khamza | SE-2428</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Zoom Modal -->
+    <div class="modal fade" id="imageZoomModal" tabindex="-1" aria-labelledby="imageZoomModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageZoomModalLabel">Product Image</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="zoomedImage" src="" alt="Product Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <i class="fas fa-check-circle me-2"></i>
+                <strong class="me-auto">Success!</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toastMessage">
+                Item added to cart successfully!
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+
+    <script>
+        // Product details page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            initializeScrollToTop();
+        });
+
+        // Image gallery functionality
+        function changeMainImage(thumbnail) {
+            const mainImage = document.getElementById('mainImage');
+            const allThumbnails = document.querySelectorAll('.gallery-thumb');
+            
+            // Remove active class from all thumbnails
+            allThumbnails.forEach(thumb => thumb.classList.remove('active'));
+            
+            // Add active class to clicked thumbnail
+            thumbnail.classList.add('active');
+            
+            // Change main image with fade effect
+            mainImage.style.opacity = '0';
+            setTimeout(() => {
+                mainImage.src = thumbnail.src.replace('w=200', 'w=800');
+                mainImage.alt = thumbnail.alt;
+                mainImage.style.opacity = '1';
+            }, 150);
+        }
+
+        // Zoom image functionality
+        function zoomImage() {
+            const mainImage = document.getElementById('mainImage');
+            const zoomedImage = document.getElementById('zoomedImage');
+            
+            zoomedImage.src = mainImage.src;
+            zoomedImage.alt = mainImage.alt;
+            
+            const modal = new bootstrap.Modal(document.getElementById('imageZoomModal'));
+            modal.show();
+        }
+
+        // Quantity controls
+        function changeQuantity(change) {
+            const quantityInput = document.getElementById('quantity');
+            let currentValue = parseInt(quantityInput.value);
+            let newValue = currentValue + change;
+            
+            if (newValue >= 1 && newValue <= 10) {
+                quantityInput.value = newValue;
+                
+                // Add visual feedback
+                quantityInput.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    quantityInput.style.transform = 'scale(1)';
+                }, 200);
+            }
+        }
+
+        // Wishlist functionality
+        function toggleWishlist() {
+            const wishlistIcon = document.getElementById('wishlistIcon');
+            const isWishlisted = wishlistIcon.classList.contains('fas');
+            
+            if (isWishlisted) {
+                wishlistIcon.classList.remove('fas');
+                wishlistIcon.classList.add('far');
+                showToast('Removed from wishlist');
+            } else {
+                wishlistIcon.classList.remove('far');
+                wishlistIcon.classList.add('fas');
+                wishlistIcon.style.color = '#e74c3c';
+                showToast('Added to wishlist');
+            }
+        }
+
+        // Share product functionality
+        function shareProduct() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'RTX 4080 Gaming Beast - Shop PC',
+                    text: 'Check out this amazing gaming PC!',
+                    url: window.location.href
+                });
+            } else {
+                // Fallback for browsers that don't support native sharing
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    showToast('Link copied to clipboard!');
+                });
+            }
+        }
+
+        // Load more reviews
+        function loadMoreReviews() {
+            const btn = event.target;
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<span class="loading"></span> Loading...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check me-2"></i>All reviews loaded';
+                btn.classList.add('btn-success');
+                
+                setTimeout(() => {
+                    btn.style.display = 'none';
+                }, 2000);
+            }, 1500);
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            document.getElementById('toastMessage').textContent = message;
+            const toast = new bootstrap.Toast(document.getElementById('successToast'));
+            toast.show();
+        }
+
+        // Scroll to top functionality
+        function initializeScrollToTop() {
+            const scrollBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollBtn.classList.add('show');
+                } else {
+                    scrollBtn.classList.remove('show');
+                }
+            });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Enhanced tab switching with animations
+        $('#productTabs button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+            const targetPane = $($(e.target).attr('data-bs-target'));
+            targetPane.find('.fade-in').each(function(index) {
+                $(this).delay(index * 100).animate({opacity: 1}, 300);
+            });
+        });
+
+        // Keyboard navigation for image gallery
+        document.addEventListener('keydown', function(e) {
+            const thumbnails = document.querySelectorAll('.gallery-thumb');
+            const activeThumbnail = document.querySelector('.gallery-thumb.active');
+            const currentIndex = Array.from(thumbnails).indexOf(activeThumbnail);
+            
+            if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                changeMainImage(thumbnails[currentIndex - 1]);
+            } else if (e.key === 'ArrowRight' && currentIndex < thumbnails.length - 1) {
+                changeMainImage(thumbnails[currentIndex + 1]);
+            }
+        });
+    </script>
+</body>
+</html>

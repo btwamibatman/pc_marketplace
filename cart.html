@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Shop PC</title>
+    <meta name="description" content="Review your selected items and proceed to checkout. Secure shopping cart with express checkout options.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-desktop me-2"></i>Shop PC
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">
+                            <i class="fas fa-laptop me-1"></i>Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product-details.html">
+                            <i class="fas fa-info-circle me-1"></i>Featured PC
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item cart-icon">
+                        <a class="nav-link active" href="cart.html">
+                            <i class="fas fa-shopping-cart me-1"></i>Cart
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="bg-light py-4" style="margin-top: 76px;">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="section">
+        <div class="container">
+            <!-- Cart Header -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="mb-0"><i class="fas fa-shopping-cart me-3"></i>Shopping Cart</h2>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="text-muted" id="cartItemCount">0 items</span>
+                    <button class="btn btn-outline-secondary" onclick="clearCart()">
+                        <i class="fas fa-trash me-1"></i>Clear Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Cart Items -->
+                <div class="col-lg-8">
+                    <!-- Empty Cart Message -->
+                    <div id="emptyCart" class="text-center py-5">
+                        <i class="fas fa-shopping-cart fa-4x text-muted mb-3"></i>
+                        <h4 class="text-muted mb-3">Your cart is empty</h4>
+                        <p class="text-muted mb-4">Add some amazing PCs to get started!</p>
+                        <a href="products.html" class="btn btn-primary-custom btn-lg">
+                            <i class="fas fa-laptop me-2"></i>Browse Products
+                        </a>
+                    </div>
+
+                    <!-- Cart Items Container -->
+                    <div id="cartItems" style="display: none;">
+                        <!-- Sample cart items will be dynamically loaded here -->
+                    </div>
+
+                    <!-- Continue Shopping -->
+                    <div id="continueShoppingSection" class="mt-4" style="display: none;">
+                        <a href="products.html" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-left me-2"></i>Continue Shopping
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="col-lg-4">
+                    <div class="cart-summary" id="cartSummary" style="display: none;">
+                        <h5 class="mb-4"><i class="fas fa-receipt me-2"></i>Order Summary</h5>
+                        
+                        <!-- Subtotal -->
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        
+                        <!-- Shipping -->
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Shipping:</span>
+                                <span id="shippingCost">$0.00</span>
+                            </div>
+                            <div class="shipping-options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="shipping" id="standardShipping" value="0" checked onchange="updateShipping()">
+                                    <label class="form-check-label small" for="standardShipping">
+                                        Standard (3-5 days) - FREE
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="shipping" id="expressShipping" value="49.99" onchange="updateShipping()">
+                                    <label class="form-check-label small" for="expressShipping">
+                                        Express (1-2 days) - $49.99
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Promo Code -->
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="promoCode" placeholder="Enter promo code">
+                                <button class="btn btn-outline-light" type="button" onclick="applyPromoCode()">
+                                    <i class="fas fa-tag"></i>
+                                </button>
+                            </div>
+                            <div id="promoMessage" class="small mt-1"></div>
+                        </div>
+
+                        <!-- Discount -->
+                        <div class="d-flex justify-content-between mb-3" id="discountRow" style="display: none !important;">
+                            <span class="text-success">Discount:</span>
+                            <span class="text-success" id="discount">-$0.00</span>
+                        </div>
+
+                        <!-- Tax -->
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Tax (8.5%):</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+
+                        <hr class="my-3">
+                        
+                        <!-- Total -->
+                        <div class="d-flex justify-content-between mb-4">
+                            <strong class="fs-5">Total:</strong>
+                            <strong class="fs-5" id="total">$0.00</strong>
+                        </div>
+
+                        <!-- Checkout Buttons -->
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary-custom btn-lg" onclick="proceedToCheckout()">
+                                <i class="fas fa-credit-card me-2"></i>Proceed to Checkout
+                            </button>
+                            <button class="btn btn-outline-light" onclick="saveForLater()">
+                                <i class="fas fa-save me-2"></i>Save for Later
+                            </button>
+                        </div>
+
+                        <!-- Security Badge -->
+                        <div class="text-center mt-4">
+                            <div class="d-flex align-items-center justify-content-center gap-2 text-light small">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure 256-bit SSL Encryption</span>
+                            </div>
+                        </div>
+
+                        <!-- Payment Methods -->
+                        <div class="text-center mt-3">
+                            <div class="text-light small mb-2">We Accept:</div>
+                            <div class="d-flex justify-content-center gap-2">
+                                <i class="fab fa-cc-visa fa-lg"></i>
+                                <i class="fab fa-cc-mastercard fa-lg"></i>
+                                <i class="fab fa-cc-amex fa-lg"></i>
+                                <i class="fab fa-cc-paypal fa-lg"></i>
+                                <i class="fab fa-apple-pay fa-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recently Viewed -->
+                    <div class="mt-4">
+                        <div class="bg-white p-4 rounded shadow-custom">
+                            <h6 class="mb-3"><i class="fas fa-history me-2"></i>Recently Viewed</h6>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <div class="card border-0">
+                                        <img src="https://images.unsplash.com/photo-1558618666-fbd26c1cd8d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                             class="card-img-top" alt="AMD Gaming Pro" style="height: 100px; object-fit: cover;">
+                                        <div class="card-body p-2">
+                                            <h6 class="card-title small">AMD Gaming Pro</h6>
+                                            <p class="card-text text-primary small">$1,899</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card border-0">
+                                        <img src="https://images.unsplash.com/photo-1591799265444-d66432b91588?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                             class="card-img-top" alt="Pro Workstation" style="height: 100px; object-fit: cover;">
+                                        <div class="card-body p-2">
+                                            <h6 class="card-title small">Pro Workstation Elite</h6>
+                                            <p class="card-text text-primary small">$3,299</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommended Products -->
+            <div class="mt-5" id="recommendedSection" style="display: none;">
+                <h4 class="mb-4"><i class="fas fa-thumbs-up me-2"></i>Recommended for You</h4>
+                <div class="row g-3">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                                 class="card-img-top" alt="Gaming Monitor" style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h6 class="card-title">Gaming Monitor 27"</h6>
+                                <p class="card-text text-primary">$299</p>
+                                <button class="btn btn-outline-primary btn-sm w-100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                                 class="card-img-top" alt="Gaming Keyboard" style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h6 class="card-title">Mechanical Keyboard</h6>
+                                <p class="card-text text-primary">$149</p>
+                                <button class="btn btn-outline-primary btn-sm w-100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1616472964808-dc37ecb5e3c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                                 class="card-img-top" alt="Gaming Mouse" style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h6 class="card-title">Gaming Mouse</h6>
+                                <p class="card-text text-primary">$79</p>
+                                <button class="btn btn-outline-primary btn-sm w-100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                                 class="card-img-top" alt="Gaming Headset" style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h6 class="card-title">Gaming Headset</h6>
+                                <p class="card-text text-primary">$199</p>
+                                <button class="btn btn-outline-primary btn-sm w-100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="footer-title">
+                        <i class="fas fa-desktop me-2"></i>Shop PC
+                    </h5>
+                    <p class="text-light">
+                        Your trusted partner for premium gaming PCs, professional workstations, 
+                        and custom computer builds. Quality, performance, and service you can depend on.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="product-details.html">Featured PC</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Categories</h6>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=gaming">Gaming PCs</a></li>
+                        <li><a href="products.html?category=workstation">Workstations</a></li>
+                        <li><a href="products.html?category=office">Office PCs</a></li>
+                        <li><a href="contact.html">Custom Builds</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Support</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Contact Info</h6>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@Shop PC.com</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>123 Tech Street</li>
+                        <li>Silicon Valley, CA 94000</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shop PC. All rights reserved. | Designed by Abdigalym Khamza | SE-2428</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Checkout Modal -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-gradient text-white">
+                    <h5 class="modal-title" id="checkoutModalLabel">
+                        <i class="fas fa-credit-card me-2"></i>Secure Checkout
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center py-4">
+                        <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                        <h4>Ready to Checkout!</h4>
+                        <p class="text-muted">This is a demo checkout. In a real application, this would redirect to a secure payment gateway.</p>
+                        <div class="bg-light p-3 rounded mt-4">
+                            <h6>Your order total: <span class="text-primary" id="modalTotal">$0.00</span></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-primary-custom" onclick="completeCheckout()">Complete Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <i class="fas fa-check-circle me-2"></i>
+                <strong class="me-auto">Success!</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toastMessage">
+                Action completed successfully!
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+
+    <script>
+        // Cart page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCartItems();
+            updateCartDisplay();
+            initializeScrollToTop();
+        });
+
+        // Load cart items from localStorage and display
+        function loadCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+            const cartContainer = document.getElementById('cartItems');
+            const emptyCart = document.getElementById('emptyCart');
+            
+            if (cartItems.length === 0) {
+                emptyCart.style.display = 'block';
+                cartContainer.style.display = 'none';
+                document.getElementById('cartSummary').style.display = 'none';
+                document.getElementById('continueShoppingSection').style.display = 'none';
+                document.getElementById('recommendedSection').style.display = 'none';
+                return;
+            }
+
+            // Hide empty cart message and show cart items
+            emptyCart.style.display = 'none';
+            cartContainer.style.display = 'block';
+            document.getElementById('cartSummary').style.display = 'block';
+            document.getElementById('continueShoppingSection').style.display = 'block';
+            document.getElementById('recommendedSection').style.display = 'block';
+
+            // Generate cart items HTML
+            cartContainer.innerHTML = cartItems.map(item => `
+                <div class="cart-item" data-id="${item.id}">
+                    <div class="row align-items-center">
+                        <div class="col-md-2">
+                            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="${item.name}" class="img-fluid rounded" style="height: 80px; object-fit: cover;">
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="mb-1">${item.name}</h6>
+                            <p class="text-muted small mb-0">SKU: ${item.id.toUpperCase()}</p>
+                            <p class="text-success small mb-0"><i class="fas fa-check-circle me-1"></i>In Stock</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="quantity-controls">
+                                <button type="button" class="quantity-btn" onclick="updateQuantity('${item.id}', -1)">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" class="quantity-input" value="${item.quantity}" min="1" max="10" 
+                                       onchange="setQuantity('${item.id}', this.value)">
+                                <button type="button" class="quantity-btn" onclick="updateQuantity('${item.id}', 1)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 text-end">
+                            <div class="fs-6 fw-bold text-primary">$${(item.price * item.quantity).toLocaleString()}</div>
+                            <div class="small text-muted">$${item.price.toLocaleString()} each</div>
+                        </div>
+                        <div class="col-md-2 text-end">
+                            <div class="dropdown">
+                                <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" onclick="saveForLaterItem('${item.id}')">
+                                        <i class="fas fa-save me-2"></i>Save for Later
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="removeItem('${item.id}')">
+                                        <i class="fas fa-trash me-2"></i>Remove
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            updateCartCalculations();
+        }
+
+        // Update quantity of item in cart
+        function updateQuantity(itemId, change) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+            const itemIndex = cartItems.findIndex(item => item.id === itemId);
+            
+            if (itemIndex > -1) {
+                cartItems[itemIndex].quantity += change;
+                if (cartItems[itemIndex].quantity <= 0) {
+                    cartItems.splice(itemIndex, 1);
+                } else if (cartItems[itemIndex].quantity > 10) {
+                    cartItems[itemIndex].quantity = 10;
+                }
+                
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                loadCartItems();
+                updateCartCount();
+                
+                // Show feedback
+                showToast(change > 0 ? 'Quantity increased' : 'Quantity decreased');
+            }
+        }
+
+        // Set specific quantity
+        function setQuantity(itemId, quantity) {
+            quantity = parseInt(quantity);
+            if (quantity < 1) quantity = 1;
+            if (quantity > 10) quantity = 10;
+
+            let cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+            const itemIndex = cartItems.findIndex(item => item.id === itemId);
+            
+            if (itemIndex > -1) {
+                cartItems[itemIndex].quantity = quantity;
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                loadCartItems();
+                updateCartCount();
+            }
+        }
+
+        // Remove item from cart
+        function removeItem(itemId) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+            cartItems = cartItems.filter(item => item.id !== itemId);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            
+            // Animate removal
+            const cartItem = document.querySelector(`[data-id="${itemId}"]`);
+            if (cartItem) {
+                cartItem.style.animation = 'slideOutRight 0.3s ease';
+                setTimeout(() => {
+                    loadCartItems();
+                    updateCartCount();
+                    showToast('Item removed from cart');
+                }, 300);
+            }
+        }
+
+        // Save item for later
+        function saveForLaterItem(itemId) {
+            // In a real application, this would save to a "saved for later" list
+            removeItem(itemId);
+            showToast('Item saved for later');
+        }
+
+        // Clear entire cart
+        function clearCart() {
+            if (confirm('Are you sure you want to clear your cart?')) {
+                localStorage.removeItem('cartItems');
+                loadCartItems();
+                updateCartCount();
+                showToast('Cart cleared');
+            }
+        }
+
+        // Update cart calculations
+        function updateCartCalculations() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+            const subtotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+            
+            // Get shipping cost
+            const shippingInputs = document.querySelectorAll('input[name="shipping"]');
+            let shippingCost = 0;
+            shippingInputs.forEach(input => {
+                if (input.checked) {
+                    shippingCost = parseFloat(input.value);
+                }
+            });
+
+            // Calculate discount (if any promo code applied)
+            const discountElement = document.getElementById('discount');
+            const discountAmount = parseFloat(discountElement.textContent.replace(/[^0-9.-]/g, '')) || 0;
+
+            // Calculate tax (8.5% of subtotal after discount)
+            const taxableAmount = subtotal - discountAmount;
+            const tax = taxableAmount * 0.085;
+
+            // Calculate total
+            const total = subtotal + shippingCost - discountAmount + tax;
+
+            // Update UI
+            document.getElementById('subtotal').textContent = `$${subtotal.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
+            document.getElementById('shippingCost').textContent = shippingCost === 0 ? 'FREE' : `$${shippingCost.toFixed(2)}`;
+            document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+            document.getElementById('modalTotal').textContent = `$${total.toFixed(2)}`;
+
+            // Update item count
+            const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cartItemCount').textContent = `${totalItems} item${totalItems !== 1 ? 's' : ''}`;
+        }
+
+        // Update shipping cost
+        function updateShipping() {
+            updateCartCalculations();
+            showToast('Shipping option updated');
+        }
+
+        // Apply promo code
+        function applyPromoCode() {
+            const promoCode = document.getElementById('promoCode').value.trim().toUpperCase();
+            const promoMessage = document.getElementById('promoMessage');
+            const discountRow = document.getElementById('discountRow');
+            const discountElement = document.getElementById('discount');
+
+            // Sample promo codes
+            const validCodes = {
+                'SAVE10': 10, // $10 off
+                'WELCOME': 5, // $5 off
+                'STUDENT': 15 // $15 off
+            };
+
+            if (validCodes[promoCode]) {
+                const discountAmount = validCodes[promoCode];
+                discountElement.textContent = `-$${discountAmount}.00`;
+                discountRow.style.display = 'flex';
+                promoMessage.textContent = `Code applied! You saved $${discountAmount}`;
+                promoMessage.className = 'small mt-1 text-success';
+                updateCartCalculations();
+                showToast(`Promo code applied! $${discountAmount} discount`);
+            } else if (promoCode === '') {
+                promoMessage.textContent = 'Please enter a promo code';
+                promoMessage.className = 'small mt-1 text-muted';
+            } else {
+                promoMessage.textContent = 'Invalid promo code';
+                promoMessage.className = 'small mt-1 text-danger';
+                discountRow.style.display = 'none';
+                discountElement.textContent = '-$0.00';
+                updateCartCalculations();
+            }
+        }
+
+        // Proceed to checkout
+        function proceedToCheckout() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+            if (cartItems.length === 0) {
+                showToast('Your cart is empty', 'error');
+                return;
+            }
+
+            const modal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+            modal.show();
+        }
+
+        // Complete checkout (demo)
+        function completeCheckout() {
+            const modal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
+            modal.hide();
+            
+            // Clear cart after successful "checkout"
+            localStorage.removeItem('cartItems');
+            loadCartItems();
+            updateCartCount();
+            
+            showToast('Order placed successfully! (Demo)', 'success');
+            
+            // Simulate redirect to order confirmation
+            setTimeout(() => {
+                alert('Thank you for your order! This is a demo website. In a real application, you would be redirected to an order confirmation page.');
+            }, 1000);
+        }
+
+        // Save cart for later
+        function saveForLater() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+            if (cartItems.length === 0) return;
+
+            // In a real application, this would save to user account
+            localStorage.setItem('savedCart', JSON.stringify(cartItems));
+            showToast('Cart saved for later');
+        }
+
+        // Show toast notification
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('successToast');
+            const toastBody = document.getElementById('toastMessage');
+            const toastHeader = toast.querySelector('.toast-header');
+            
+            toastBody.textContent = message;
+            
+            // Change toast style based on type
+            if (type === 'error') {
+                toastHeader.className = 'toast-header bg-danger text-white';
+            } else {
+                toastHeader.className = 'toast-header bg-success text-white';
+            }
+            
+            const bsToast = new bootstrap.Toast(toast);
+            bsToast.show();
+        }
+
+        // Scroll to top functionality
+        function initializeScrollToTop() {
+            const scrollBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollBtn.classList.add('show');
+                } else {
+                    scrollBtn.classList.remove('show');
+                }
+            });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Animation for cart items
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const cartItems = document.querySelectorAll('.cart-item');
+                cartItems.forEach((item, index) => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateX(-20px)';
+                    setTimeout(() => {
+                        item.style.transition = 'all 0.5s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateX(0)';
+                    }, index * 100);
+                });
+            }, 100);
+        });
+
+        // Initialize with some sample cart items for demo
+        function initializeSampleCart() {
+            const existingItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+            if (existingItems.length === 0) {
+                const sampleItems = [
+                    {
+                        id: 'gaming-beast',
+                        name: 'RTX 4080 Gaming Beast',
+                        price: 2549,
+                        quantity: 1
+                    }
+                ];
+                localStorage.setItem('cartItems', JSON.stringify(sampleItems));
+            }
+        }
+
+        // Add sample cart if URL has demo parameter
+        if (window.location.search.includes('demo=true')) {
+            initializeSampleCart();
+        }
+    </script>
+</body>
+</html>

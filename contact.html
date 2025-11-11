@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Shop PC</title>
+    <meta name="description" content="Get in touch with Shop PC. Contact us for custom builds, support, or any questions about our products and services.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-desktop me-2"></i>Shop PC
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">
+                            <i class="fas fa-laptop me-1"></i>Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product-details.html">
+                            <i class="fas fa-info-circle me-1"></i>Featured PC
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item cart-icon">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fas fa-shopping-cart me-1"></i>Cart
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="bg-light py-4" style="margin-top: 76px;">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Contact Hero Section -->
+    <section class="bg-gradient text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-3">Get In Touch</h1>
+                    <p class="lead mb-4">
+                        Have questions about our products? Need help with a custom build? 
+                        Our expert team is here to help you find the perfect PC solution.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <div class="contact-stat">
+                            <h4 class="mb-0">24/7</h4>
+                            <small>Support Available</small>
+                        </div>
+                        <div class="contact-stat">
+                            <h4 class="mb-0">< 5 min</h4>
+                            <small>Average Response</small>
+                        </div>
+                        <div class="contact-stat">
+                            <h4 class="mb-0">98%</h4>
+                            <small>Customer Satisfaction</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <i class="fas fa-comments fa-6x opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How Can We Help?</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-method text-center p-4 h-100 bg-white shadow-custom rounded">
+                        <div class="contact-icon mb-3">
+                            <i class="fas fa-phone fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="mb-3">Call Us</h5>
+                        <p class="text-muted mb-3">Speak with our technical experts</p>
+                        <strong class="text-primary">+1 (555) 123-4567</strong>
+                        <div class="mt-3">
+                            <button class="btn btn-outline-primary btn-sm" onclick="callUs()">
+                                <i class="fas fa-phone me-1"></i>Call Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-method text-center p-4 h-100 bg-white shadow-custom rounded">
+                        <div class="contact-icon mb-3">
+                            <i class="fas fa-comments fa-3x text-success"></i>
+                        </div>
+                        <h5 class="mb-3">Live Chat</h5>
+                        <p class="text-muted mb-3">Get instant help from our team</p>
+                        <strong class="text-success">Average wait: 30 sec</strong>
+                        <div class="mt-3">
+                            <button class="btn btn-outline-success btn-sm" onclick="startLiveChat()">
+                                <i class="fas fa-comments me-1"></i>Start Chat
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-method text-center p-4 h-100 bg-white shadow-custom rounded">
+                        <div class="contact-icon mb-3">
+                            <i class="fas fa-envelope fa-3x text-warning"></i>
+                        </div>
+                        <h5 class="mb-3">Email</h5>
+                        <p class="text-muted mb-3">Send us a detailed message</p>
+                        <strong class="text-warning">info@Shop PC.com</strong>
+                        <div class="mt-3">
+                            <button class="btn btn-outline-warning btn-sm" onclick="scrollToContact()">
+                                <i class="fas fa-envelope me-1"></i>Send Email
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-method text-center p-4 h-100 bg-white shadow-custom rounded">
+                        <div class="contact-icon mb-3">
+                            <i class="fas fa-map-marker-alt fa-3x text-danger"></i>
+                        </div>
+                        <h5 class="mb-3">Visit Us</h5>
+                        <p class="text-muted mb-3">Come see our showroom</p>
+                        <strong class="text-danger">123 Tech Street, CA</strong>
+                        <div class="mt-3">
+                            <button class="btn btn-outline-danger btn-sm" onclick="openMap()">
+                                <i class="fas fa-map me-1"></i>Get Directions
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form and Information -->
+    <section class="section section-alt" id="contactForm">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Contact Form -->
+                <div class="col-lg-8">
+                    <div class="contact-form-container p-4 bg-white shadow-custom rounded">
+                        <h3 class="mb-4">
+                            <i class="fas fa-paper-plane me-2 text-primary"></i>Send Us a Message
+                        </h3>
+                        
+                        <form id="contactForm" novalidate>
+                            <div class="row g-3">
+                                <!-- Name Fields -->
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                    <div class="invalid-feedback">Please provide your first name.</div>
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                    <div class="invalid-feedback">Please provide your last name.</div>
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+
+                                <!-- Contact Information -->
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">Please provide a valid email address.</div>
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="+1 (555) 123-4567">
+                                    <div class="invalid-feedback">Please provide a valid phone number.</div>
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+
+                                <!-- Inquiry Type -->
+                                <div class="col-12">
+                                    <label for="inquiryType" class="form-label">Inquiry Type *</label>
+                                    <select class="form-select" id="inquiryType" required onchange="toggleCustomBuildFields()">
+                                        <option value="">Choose...</option>
+                                        <option value="general">General Question</option>
+                                        <option value="support">Technical Support</option>
+                                        <option value="custom">Custom Build Quote</option>
+                                        <option value="warranty">Warranty Claim</option>
+                                        <option value="partnership">Business Partnership</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select an inquiry type.</div>
+                                    <div class="valid-feedback">Perfect!</div>
+                                </div>
+
+                                <!-- Custom Build Fields (Hidden by default) -->
+                                <div id="customBuildFields" style="display: none;">
+                                    <div class="col-12">
+                                        <h6 class="text-primary mt-3 mb-3">
+                                            <i class="fas fa-cog me-2"></i>Custom Build Requirements
+                                        </h6>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label for="budget" class="form-label">Budget Range</label>
+                                        <select class="form-select" id="budget">
+                                            <option value="">Select budget...</option>
+                                            <option value="under-1000">Under $1,000</option>
+                                            <option value="1000-2000">$1,000 - $2,000</option>
+                                            <option value="2000-3000">$2,000 - $3,000</option>
+                                            <option value="3000-5000">$3,000 - $5,000</option>
+                                            <option value="over-5000">Over $5,000</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label for="useCase" class="form-label">Primary Use</label>
+                                        <select class="form-select" id="useCase">
+                                            <option value="">Select use case...</option>
+                                            <option value="gaming">Gaming</option>
+                                            <option value="workstation">Professional Workstation</option>
+                                            <option value="office">Office Work</option>
+                                            <option value="streaming">Content Creation/Streaming</option>
+                                            <option value="ai">AI/Machine Learning</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <label for="specifications" class="form-label">Specific Requirements</label>
+                                        <textarea class="form-control" id="specifications" rows="3" 
+                                                placeholder="Describe any specific hardware requirements, preferred brands, or performance needs..."></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Priority Level -->
+                                <div class="col-md-6">
+                                    <label for="priority" class="form-label">Priority Level</label>
+                                    <select class="form-select" id="priority">
+                                        <option value="normal">Normal</option>
+                                        <option value="urgent">Urgent</option>
+                                        <option value="emergency">Emergency</option>
+                                    </select>
+                                </div>
+
+                                <!-- Preferred Contact Method -->
+                                <div class="col-md-6">
+                                    <label class="form-label">Preferred Contact Method</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="contactMethod" id="contactEmail" value="email" checked>
+                                        <label class="form-check-label" for="contactEmail">Email</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="contactMethod" id="contactPhone" value="phone">
+                                        <label class="form-check-label" for="contactPhone">Phone</label>
+                                    </div>
+                                </div>
+
+                                <!-- Message -->
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="message" rows="5" required 
+                                            placeholder="Please describe your question or request in detail..."></textarea>
+                                    <div class="invalid-feedback">Please provide a message.</div>
+                                    <div class="valid-feedback">Great message!</div>
+                                    <div class="form-text">
+                                        <span id="charCount">0</span>/500 characters
+                                    </div>
+                                </div>
+
+                                <!-- File Upload -->
+                                <div class="col-12">
+                                    <label for="attachments" class="form-label">Attachments (Optional)</label>
+                                    <input type="file" class="form-control" id="attachments" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+                                    <div class="form-text">
+                                        You can attach images, documents, or specifications. Max 5MB per file.
+                                    </div>
+                                </div>
+
+                                <!-- Newsletter Subscription -->
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="newsletter" checked>
+                                        <label class="form-check-label" for="newsletter">
+                                            Subscribe to our newsletter for the latest deals and tech news
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Terms and Conditions -->
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="terms" required>
+                                        <label class="form-check-label" for="terms">
+                                            I agree to the <a href="#" class="text-primary">Terms of Service</a> 
+                                            and <a href="#" class="text-primary">Privacy Policy</a> *
+                                        </label>
+                                        <div class="invalid-feedback">You must agree to the terms and conditions.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary-custom btn-lg">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                        <span class="loading d-none">
+                                            <i class="fas fa-spinner fa-spin"></i>
+                                        </span>
+                                    </button>
+                                    <button type="reset" class="btn btn-outline-secondary btn-lg ms-2">
+                                        <i class="fas fa-undo me-2"></i>Clear Form
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Business Hours -->
+                    <div class="contact-info-card p-4 mb-4 bg-white shadow-custom rounded">
+                        <h5 class="mb-3">
+                            <i class="fas fa-clock me-2 text-primary"></i>Business Hours
+                        </h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="d-flex justify-content-between mb-2">
+                                <span>Monday - Friday</span>
+                                <strong>8:00 AM - 8:00 PM</strong>
+                            </li>
+                            <li class="d-flex justify-content-between mb-2">
+                                <span>Saturday</span>
+                                <strong>9:00 AM - 6:00 PM</strong>
+                            </li>
+                            <li class="d-flex justify-content-between mb-2">
+                                <span>Sunday</span>
+                                <strong>10:00 AM - 4:00 PM</strong>
+                            </li>
+                        </ul>
+                        <div class="mt-3 p-3 bg-light rounded">
+                            <small class="text-muted">
+                                <i class="fas fa-info-circle me-1"></i>
+                                24/7 emergency support available for existing customers
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Quick Links -->
+                    <div class="contact-info-card p-4 mb-4 bg-white shadow-custom rounded">
+                        <h5 class="mb-3">
+                            <i class="fas fa-question-circle me-2 text-primary"></i>Quick Help
+                        </h5>
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item border-0">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed p-2 bg-transparent border-0" 
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        How long does a custom build take?
+                                    </button>
+                                </h6>
+                                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body p-2 pt-0">
+                                        <small class="text-muted">
+                                            Most custom builds are completed within 3-5 business days, 
+                                            including assembly and testing.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed p-2 bg-transparent border-0" 
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        Do you offer financing?
+                                    </button>
+                                </h6>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body p-2 pt-0">
+                                        <small class="text-muted">
+                                            Yes, we offer 0% financing for 12 months on purchases over $1,000.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed p-2 bg-transparent border-0" 
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        What's your return policy?
+                                    </button>
+                                </h6>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body p-2 pt-0">
+                                        <small class="text-muted">
+                                            30-day return policy for all products, with free return shipping.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="contact-info-card p-4 mb-4 bg-danger text-white rounded">
+                        <h5 class="mb-3">
+                            <i class="fas fa-exclamation-triangle me-2"></i>Emergency Support
+                        </h5>
+                        <p class="mb-3">Critical system down? Need immediate help?</p>
+                        <button class="btn btn-light btn-sm w-100" onclick="emergencyContact()">
+                            <i class="fas fa-phone me-2"></i>Call Emergency Line
+                        </button>
+                        <div class="mt-2 text-center">
+                            <small>24/7 • 1-800-EMERGENCY</small>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="contact-info-card p-4 bg-white shadow-custom rounded">
+                        <h5 class="mb-3">
+                            <i class="fas fa-share-alt me-2 text-primary"></i>Follow Us
+                        </h5>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="text-primary fs-4" data-bs-toggle="tooltip" title="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="text-info fs-4" data-bs-toggle="tooltip" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-danger fs-4" data-bs-toggle="tooltip" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-danger fs-4" data-bs-toggle="tooltip" title="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="text-primary fs-4" data-bs-toggle="tooltip" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section">
+        <div class="container">
+            <h3 class="section-title">Visit Our Showroom</h3>
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <!-- Interactive Map Placeholder -->
+                    <div class="map-container bg-light rounded shadow-custom position-relative" style="height: 400px;">
+                        <div class="position-absolute top-50 start-50 translate-middle text-center">
+                            <i class="fas fa-map-marker-alt fa-4x text-primary mb-3"></i>
+                            <h5>Interactive Map</h5>
+                            <p class="text-muted mb-3">123 Tech Street, Silicon Valley, CA 94000</p>
+                            <button class="btn btn-primary-custom" onclick="openMap()">
+                                <i class="fas fa-external-link-alt me-2"></i>Open in Maps
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="location-info p-4 bg-white shadow-custom rounded h-100">
+                        <h5 class="mb-3">
+                            <i class="fas fa-store me-2 text-primary"></i>Store Information
+                        </h5>
+                        <div class="location-details">
+                            <div class="mb-3">
+                                <i class="fas fa-map-marker-alt me-2 text-danger"></i>
+                                <strong>Address:</strong><br>
+                                123 Tech Street<br>
+                                Silicon Valley, CA 94000
+                            </div>
+                            <div class="mb-3">
+                                <i class="fas fa-parking me-2 text-success"></i>
+                                <strong>Parking:</strong><br>
+                                Free customer parking available
+                            </div>
+                            <div class="mb-3">
+                                <i class="fas fa-bus me-2 text-info"></i>
+                                <strong>Public Transit:</strong><br>
+                                Metro Line 3, Bus Routes 15, 22, 34
+                            </div>
+                            <div class="mb-3">
+                                <i class="fas fa-wheelchair me-2 text-secondary"></i>
+                                <strong>Accessibility:</strong><br>
+                                Fully wheelchair accessible
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="footer-title">
+                        <i class="fas fa-desktop me-2"></i>Shop PC
+                    </h5>
+                    <p class="text-light">
+                        Your trusted partner for premium gaming PCs, professional workstations, 
+                        and custom computer builds. Quality, performance, and service you can depend on.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="product-details.html">Featured PC</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Categories</h6>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=gaming">Gaming PCs</a></li>
+                        <li><a href="products.html?category=workstation">Workstations</a></li>
+                        <li><a href="products.html?category=office">Office PCs</a></li>
+                        <li><a href="contact.html">Custom Builds</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Support</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Contact Info</h6>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@Shop PC.com</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>123 Tech Street</li>
+                        <li>Silicon Valley, CA 94000</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shop PC. All rights reserved. | Designed by Abdigalym Khamza | SE-2428</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <i class="fas fa-check-circle fa-4x text-success mb-3"></i>
+                    <h4 class="mb-3">Message Sent Successfully!</h4>
+                    <p class="text-muted mb-4">
+                        Thank you for contacting us. We'll get back to you within 24 hours.
+                    </p>
+                    <button type="button" class="btn btn-primary-custom" data-bs-dismiss="modal">
+                        <i class="fas fa-thumbs-up me-2"></i>Great!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+
+    <script>
+        // Contact page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            initializeContactForm();
+            initializeTooltips();
+            initializeScrollToTop();
+            initializeCharacterCount();
+        });
+
+        // Initialize contact form validation
+        function initializeContactForm() {
+            const form = document.getElementById('contactForm');
+            
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                if (form.checkValidity()) {
+                    submitForm();
+                } else {
+                    // Add visual feedback for invalid fields
+                    const invalidFields = form.querySelectorAll(':invalid');
+                    invalidFields[0]?.focus();
+                    
+                    // Animate invalid fields
+                    invalidFields.forEach(field => {
+                        field.style.animation = 'shake 0.5s';
+                        setTimeout(() => {
+                            field.style.animation = '';
+                        }, 500);
+                    });
+                }
+
+                form.classList.add('was-validated');
+            });
+
+            // Real-time validation feedback
+            const inputs = form.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.checkValidity()) {
+                        this.classList.add('is-valid');
+                        this.classList.remove('is-invalid');
+                    } else {
+                        this.classList.add('is-invalid');
+                        this.classList.remove('is-valid');
+                    }
+                });
+            });
+
+            // Phone number formatting
+            const phoneInput = document.getElementById('phone');
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length >= 6) {
+                    value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+                } else if (value.length >= 3) {
+                    value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
+                }
+                e.target.value = value;
+            });
+        }
+
+        // Toggle custom build fields based on inquiry type
+        function toggleCustomBuildFields() {
+            const inquiryType = document.getElementById('inquiryType').value;
+            const customBuildFields = document.getElementById('customBuildFields');
+            
+            if (inquiryType === 'custom') {
+                customBuildFields.style.display = 'block';
+                $('#customBuildFields').slideDown(300);
+            } else {
+                $('#customBuildFields').slideUp(300, function() {
+                    customBuildFields.style.display = 'none';
+                });
+            }
+        }
+
+        // Character count for message field
+        function initializeCharacterCount() {
+            const messageField = document.getElementById('message');
+            const charCount = document.getElementById('charCount');
+            const maxChars = 500;
+
+            messageField.addEventListener('input', function() {
+                const currentLength = this.value.length;
+                charCount.textContent = currentLength;
+                
+                if (currentLength > maxChars * 0.9) {
+                    charCount.classList.add('text-warning');
+                } else if (currentLength > maxChars * 0.95) {
+                    charCount.classList.remove('text-warning');
+                    charCount.classList.add('text-danger');
+                } else {
+                    charCount.classList.remove('text-warning', 'text-danger');
+                }
+                
+                // Prevent exceeding maximum
+                if (currentLength > maxChars) {
+                    this.value = this.value.substring(0, maxChars);
+                    charCount.textContent = maxChars;
+                }
+            });
+        }
+
+        // Submit form (demo)
+        function submitForm() {
+            const submitBtn = document.querySelector('button[type="submit"]');
+            const loading = submitBtn.querySelector('.loading');
+            const icon = submitBtn.querySelector('.fas:not(.loading .fas)');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            icon.style.display = 'none';
+            loading.classList.remove('d-none');
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Hide loading state
+                loading.classList.add('d-none');
+                icon.style.display = 'inline';
+                submitBtn.disabled = false;
+                
+                // Show success modal
+                const modal = new bootstrap.Modal(document.getElementById('successModal'));
+                modal.show();
+                
+                // Reset form after modal is hidden
+                modal._element.addEventListener('hidden.bs.modal', function() {
+                    document.getElementById('contactForm').reset();
+                    document.getElementById('contactForm').classList.remove('was-validated');
+                    // Reset custom build fields
+                    document.getElementById('customBuildFields').style.display = 'none';
+                }, { once: true });
+                
+            }, 2000);
+        }
+
+        // Contact method functions
+        function callUs() {
+            window.location.href = 'tel:+15551234567';
+        }
+
+        function startLiveChat() {
+            // In a real application, this would open a chat widget
+            alert('Live chat feature would be implemented here. This is a demo.');
+        }
+
+        function scrollToContact() {
+            document.getElementById('contactForm').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        function openMap() {
+            // Open map in new tab
+            window.open('https://maps.google.com/?q=123+Tech+Street,+Silicon+Valley,+CA+94000', '_blank');
+        }
+
+        function emergencyContact() {
+            if (confirm('This will call our emergency support line. Continue?')) {
+                window.location.href = 'tel:+18003637436';
+            }
+        }
+
+        // Initialize tooltips
+        function initializeTooltips() {
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function(tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        }
+
+        // Scroll to top functionality
+        function initializeScrollToTop() {
+            const scrollBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollBtn.classList.add('show');
+                } else {
+                    scrollBtn.classList.remove('show');
+                }
+            });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add shake animation for invalid fields
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                50% { transform: translateX(5px); }
+                75% { transform: translateX(-5px); }
+                100% { transform: translateX(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Smooth animations for contact methods
+        $(document).ready(function() {
+            $('.contact-method').hover(
+                function() {
+                    $(this).find('.contact-icon i').addClass('fa-beat');
+                },
+                function() {
+                    $(this).find('.contact-icon i').removeClass('fa-beat');
+                }
+            );
+            
+            // Animate contact methods on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.contact-method').forEach(method => {
+                observer.observe(method);
+            });
+        });
+    </script>
+</body>
+</html>
