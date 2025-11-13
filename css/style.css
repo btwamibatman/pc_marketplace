@@ -38,8 +38,25 @@ body.dark-theme {
     --section-bg: #0f3460;
 }
 
+/* Apply dark theme to all Bootstrap cards */
+body.dark-theme .card {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+body.dark-theme .card-body {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+
+body.dark-theme .card-title,
+body.dark-theme .card-text {
+    color: var(--text-color) !important;
+}
+
 /* Apply theme transitions */
-body, .navbar, .product-card, .cart-summary, .footer, .form-control, main {
+body, .navbar, .product-card, .cart-summary, .footer, .form-control, main, .card, .card-body {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 

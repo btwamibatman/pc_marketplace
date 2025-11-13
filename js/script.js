@@ -1,9 +1,3 @@
-/**
- * Shop PC - Main JavaScript File
- * Student: Abdigalym Khamza
- * Group: SE-2428
- * Assignment #8 - Interactive Website
- */
 
 // ============================================
 // CART FUNCTIONALITY
@@ -14,11 +8,22 @@ let cartItems = [];
 
 // Load cart from localStorage when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded');
     loadCart();
     updateCartCount();
     initializePage();
-    initializeTheme();
-    loadQuote();
+    
+    // Small delay to ensure DOM is fully ready
+    setTimeout(function() {
+        initializeTheme();
+        loadQuote();
+        
+        // Attach new quote button
+        const newQuoteBtn = document.getElementById('newQuoteBtn');
+        if (newQuoteBtn) {
+            newQuoteBtn.addEventListener('click', loadQuote);
+        }
+    }, 100);
 });
 
 // Load cart from localStorage
@@ -434,7 +439,12 @@ function isInViewport(element) {
 
 function initializeTheme() {
     const themeToggle = document.getElementById('themeToggle');
-    if (!themeToggle) return;
+    if (!themeToggle) {
+        console.log('Theme toggle button not found!');
+        return;
+    }
+
+    console.log('Theme toggle button found, initializing...');
 
     // Load saved theme
     const savedTheme = localStorage.getItem('theme') || 'light';
@@ -443,10 +453,13 @@ function initializeTheme() {
     }
 
     // Toggle theme
-    themeToggle.addEventListener('click', function() {
+    themeToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log('Theme button clicked!');
         document.body.classList.toggle('dark-theme');
         const isDark = document.body.classList.contains('dark-theme');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        console.log('Theme is now:', isDark ? 'dark' : 'light');
     });
 }
 
@@ -466,11 +479,3 @@ async function loadQuote() {
         quoteText.textContent = '"Innovation distinguishes between a leader and a follower." — Steve Jobs';
     }
 }
-
-// Attach new quote button
-document.addEventListener('DOMContentLoaded', function() {
-    const newQuoteBtn = document.getElementById('newQuoteBtn');
-    if (newQuoteBtn) {
-        newQuoteBtn.addEventListener('click', loadQuote);
-    }
-});
